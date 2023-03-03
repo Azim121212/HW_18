@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">HW_18</string>
+    <string name="country_of_origin">Country of Origin</string>
+    <string name="product_category">Product Category</string>
+    <string name="current">Current</string>
+    <string name="export">export</string>
+    <string name="brand">Brand</string>
+    <string name="origin">Origin</string>
+    <string name="policy">policy</string>
+    <string name="next_menu" />
+    <string name="next_menu1">aaa</string>
 </resources>

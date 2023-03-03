@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newWhite"
+    tools:context=".SecondActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_topLiner"
+        android:background="@color/whiteGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="422dp"
+        android:layout_height="62dp">
+
+        <ImageButton
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ic_iconka24"
+            android:layout_width="44dp"
+            android:layout_height="44dp"/>
+
+
+
+        <ImageView
+            android:background="@drawable/icon"
+            android:layout_marginStart="124dp"
+            android:layout_gravity="center"
+            android:layout_width="52dp"
+            android:layout_height="52dp"/>
+
+        <ImageButton
+            android:layout_marginStart="123dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/icon2"
+            android:layout_width="44dp"
+            android:layout_height="44dp"/>
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_policies"
+        android:layout_marginTop="54dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_topLiner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:text="Policies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <EditText
+        android:id="@+id/et_policy"
+        android:paddingStart="24dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button"
+        android:hint="@string/policy"
+        app:layout_constraintTop_toBottomOf="@id/tv_policies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="336dp"
+        android:layout_height="46dp"/>
+
+    <EditText
+        android:id="@+id/et_product"
+        android:paddingStart="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button"
+        android:hint="Product"
+        app:layout_constraintTop_toBottomOf="@id/et_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="336dp"
+        android:layout_height="46dp"/>
+
+    <EditText
+        android:id="@+id/et_origin"
+        android:paddingStart="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button"
+        android:hint="@string/origin"
+        app:layout_constraintTop_toBottomOf="@id/et_product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="336dp"
+        android:layout_height="46dp"/>
+
+
+
+    <EditText
+        android:id="@+id/et_brand"
+        android:paddingStart="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button"
+        android:hint="@string/brand"
+        app:layout_constraintTop_toBottomOf="@id/et_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="336dp"
+        android:layout_height="46dp"/>
+
+    <TextView
+        android:id="@+id/tv_curretn"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/et_brand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="46dp"
+        android:text="@string/current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:text="@string/export"
+        android:id="@+id/btn_export"
+        android:background="@drawable/button"
+        app:backgroundTint="@color/red"
+        android:textSize="8sp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_curretn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="422dp"
+        android:layout_height="98dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="62dp"
+            android:gravity="bottom"
+            android:text="@string/country_of_origin"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="62dp"
+            android:gravity="bottom"
+            android:text="@string/product_category"
+            android:textSize="16sp" />
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="126dp"
+        android:layout_height="34dp"
+        android:layout_gravity="end"
+        android:background="@drawable/dots"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="580dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

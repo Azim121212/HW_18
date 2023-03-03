@@ -2,29 +2,42 @@ package com.example.hw_18;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.hw_18.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
-    private Integer x,y;
+    private int x;
+    private int y;
     private boolean isOperationClick;
     private String operation;
+    View nextMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+        nextMenu = findViewById(R.id.next_menu);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        nextMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            String result = ((TextView) findViewById(R.id.text_view)).getText().toString();
+            intent.putExtra("result", result);
+            startActivity(intent);
+        });
     }
 
     public void onNumberClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_one:
                 appendNumber("1");
                 break;
@@ -77,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void appendNumber(String number) {
+        nextMenu.setVisibility(View.INVISIBLE);
         if (textView.getText().toString().equals("0") || isOperationClick) {
             textView.setText(number);
         } else {
@@ -91,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onOperationClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.plus:
                 x = Integer.valueOf(textView.getText().toString());
                 isOperationClick = true;
@@ -131,11 +145,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.ravno:
                 if (isOperationClick) {
-                    int y = Integer.valueOf(textView.getText().toString());
-                    int result;
+                    y = Integer.valueOf(textView.getText().toString());
+
                     switch (operation) {
                         case "+/-":
-                            result = x ^ y;
+                            int result = x ^ y;
                             break;
 
                         case "%":
@@ -162,12 +176,13 @@ public class MainActivity extends AppCompatActivity {
                             result = 0;
                             break;
                     }
-                    textView.setText(String.valueOf(result));
+                    nextMenu.setVisibility(view.getVisibility());
+
 
                 }
-
                 isOperationClick = true;
                 break;
+
         }
     }
 }
